@@ -9,8 +9,8 @@ lcd_scrn_x=71;
 lcd_scrn_y=22.54;
 lcd_scrn_z=5;
 
-lcd_board_x=80;
-lcd_board_y=36;
+lcd_board_x=35;
+lcd_board_y=32;
 lcd_board_z=1.6; //does not include metal tabs on base
 
 lcd_hole_d=3.4;
@@ -24,7 +24,7 @@ difference(){
         color("OliveDrab")
         translate([0,0,0])
         cube([lcd_board_x,lcd_board_y,lcd_board_z]);
-
+/*
         color("DarkSlateGray")
         translate([(lcd_board_x-lcd_scrn_x)/2,(lcd_board_y-lcd_scrn_y)/2,lcd_board_z])
         cube([lcd_scrn_x,lcd_scrn_y,lcd_scrn_z]);
@@ -32,7 +32,7 @@ difference(){
         color("darkRed")
         translate([(lcd_board_x-lcd_scrn_x)/2,(lcd_board_y-lcd_scrn_y)/2,lcd_board_z])
         cube([lcd_scrn_x,lcd_scrn_y,lcd_scrn_z]);
-    }
+*/    }
 
     for(i=[lcd_hole_offset,lcd_board_x-lcd_hole_offset]){
         for(j=[lcd_hole_offset,lcd_board_y-lcd_hole_offset]){
