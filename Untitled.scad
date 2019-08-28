@@ -1,6 +1,8 @@
+include <NopSCADlib/lib.scad>
+
 use <roundbox.scad>
 use <lcd.scad>
-use <ULN2003.scad>
+use <ZC-A0591.scad>
 use <28BYJ.scad>
 use <pont.scad>
 
@@ -40,15 +42,15 @@ cylinder( h = width + 10, r=100, center = true, $fn=1000);
 }
 
 
-module motors( support=false, screw_hole=false, motor=true ) {
+module motors( support=false, hole=false, motor=true ) {
 axe_pos = 0;
 
 translate([axe_pos, 96.1/2, 0])
-28BYJ(support, screw_hole, motor);
+28BYJ_stepper(support, hole, motor);
 
 translate([axe_pos, -96.1/2, 0])
 rotate([ 0, 0, 180]) 
-28BYJ(support, screw_hole, motor);
+28BYJ_stepper(support, hole, motor);
 }
 
 // color("blue") battery_case();
@@ -56,9 +58,9 @@ module caisse() {
 difference() {
 union() {
 case();
-motors(support=true, screw_hole=false, motor=false);
+motors(support=true, hole=false, motor=false);
 }
-motors(support=false, screw_hole=true);
+motors(support=false, hole=true, motor=false);
 }
 
 translate([ 23, 0, 0])
@@ -91,13 +93,14 @@ module battery_case() {
   }
 }
 
-translate([-60, 10,  30])
-rotate([0, 90, 0])
-ULN2003();
+translate([-60, 23,  12])
+rotate([0, 90, 0]) {
+    
+ZC_A0591();
 
-translate([-60, -45,  30])
-rotate([0, 90, 0])
-ULN2003();
+translate([ 0, -52,  0])
+ZC_A0591();
+}
 
 color("blue")
 battery_case();
@@ -140,9 +143,10 @@ difference() {
 }
 }
 
-cover_hole();
+//cover_hole();
 
-//motors();
+motors();
 //case();
-//full_equip();
+caisse();
+full_equip();
 
