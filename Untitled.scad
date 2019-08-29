@@ -95,10 +95,12 @@ module battery_case() {
 
 translate([-60, 23,  12])
 rotate([0, 90, 0]) {
-    
+
+rotate([ 180, 0, 180])    
 ZC_A0591();
 
 translate([ 0, -52,  0])
+rotate([ 180, 0, 180])    
 ZC_A0591();
 }
 
