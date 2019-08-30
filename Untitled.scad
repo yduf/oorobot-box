@@ -1,45 +1,13 @@
 include <NopSCADlib/lib.scad>
 
-use <roundbox.scad>
-use <lcd.scad>
+use <LCD1602A.scad>
 use <ZC-A0591.scad>
 use <28BYJ.scad>
 use <pont.scad>
+use <chassis.scad>
 
 
 include <arduino.scad>
-
-width = 96;
-height = 60;
-length = 150;
-thick  = 3;
-
-// chassis
-module chassis() {
-difference()
-{
-cube([ length, width, height], center=true);
-
-color("cyan")
-translate([0, 0, thick])
-rotate([0, 90, 0]) {
-l = length + 2*thick;
-translate([0, 0, -l/2])
-roundedRect([height, width-2*thick, l], 3);
-}
-}
-}
-
-module case() {
-intersection() {
-chassis();
-
-color("blue")
-translate([0, 0, -50])
-rotate([90, 0, 0])
-cylinder( h = width + 10, r=100, center = true, $fn=1000);
-}
-}
 
 
 module motors( support=false, hole=false, motor=true ) {
@@ -66,16 +34,20 @@ motors(support=false, hole=true, motor=false);
 translate([ 23, 0, 0])
 T();
 
-translate([ -55, 0, 0])
+translate([ -44, 0, 0])
 T();
 
 }
 
-module full_equip() {
-    //caisse();
-    translate([60, -40,  30])
-rotate([10, 0, 90])
-lcd();
+module full_equip( hole=false) {
+translate([41, 0,  35])
+rotate([18, 0, 90]) {
+    
+LCD1602A(hole=hole, model=!hole);
+
+support_LCD( length = 96, width=42);
+
+}
 
 // projection(cut = true)
 translate([20, -25,  25])
@@ -93,7 +65,7 @@ module battery_case() {
   }
 }
 
-translate([-60, 23,  12])
+translate([-48, 23,  12])
 rotate([0, 90, 0]) {
 
 rotate([ 180, 0, 180])    
@@ -104,8 +76,7 @@ rotate([ 180, 0, 180])
 ZC_A0591();
 }
 
-color("blue")
-battery_case();
+// color("blue") battery_case();
 
 }
 
@@ -140,7 +111,7 @@ difference() {
     cover();
     translate([ 3, 3, 0])
     scale([ 1.1, 1.1, 1]) {
-        full_equip();
+        full_equip(hole=true);
     }
 }
 }
@@ -149,6 +120,9 @@ difference() {
 
 motors();
 //case();
-caisse();
-full_equip();
+caisse(); full_equip();
+
+translate([ 73, 0, -2])
+rotate([75, 0, 90])
+support_LCD( length = 96, width=50);
 
