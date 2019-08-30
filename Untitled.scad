@@ -6,6 +6,8 @@ use <28BYJ.scad>
 use <pont.scad>
 use <chassis.scad>
 
+use <roundbox.scad>
+
 
 include <arduino.scad>
 
@@ -125,4 +127,18 @@ caisse(); full_equip();
 translate([ 73, 0, -2])
 rotate([75, 0, 90])
 support_LCD( length = 96, width=50);
+
+
+translate([ -38, 0, 41])
+rotate([-18, 0, 90])
+support_LCD( length = 96, width=20);
+
+battery_w = 70;
+battery_l = 30;
+battery_h = 120;
+
+color("white")
+translate([ -24, 0, -27])
+rotate([0, 0, 90])
+roundedRect([battery_w, battery_l, battery_h], 3);
 
