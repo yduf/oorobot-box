@@ -205,4 +205,4 @@ module ArduinoHole(length)
 	cylinder(r=1.5, h=length, $fn=25);
 }
 
-//Arduino( false, false, false);
+//Arduino( solid_holes=1, combined_headers=0, extend_ports=1);

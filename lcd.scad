@@ -11,7 +11,7 @@ module support_LCD( length, width) {
         cylinder(r=width/2, h=length, center=true);
         
         w = length + 1;
-        color("cyan")
+        color("lightblue")
         translate([w/2,0,0]) 
         cube(w, center=true);
     } 

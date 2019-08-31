@@ -4,6 +4,7 @@ use <chassis.scad>
 use <motors.scad>
 use <driver.scad>
 use <lcd.scad>
+use <controller.scad>
 
 module driver_loc( mat = false, hole=false, equip = false) {
     translate([ -44, 0, 0])
@@ -17,6 +18,12 @@ module lcd_loc(
     rotate([-18.5, 0, -90])
     lcd( mat=mat, hole=hole, equip=equip);
 }
+
+module controller_loc( mat = false, hole=false, equip = false) {
+    translate([ 17, 0, 0])
+    rotate([0, 0, 180])
+    controller( mat=mat, hole=hole, equip=equip);
+}
  
 module caisse_impl( mat = false, hole=false, equip = false) {
     if( mat) {
@@ -24,12 +31,14 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         motors( mat=mat);
         driver_loc( mat=mat);
         lcd_loc( mat=mat);
+        controller_loc( mat=mat);
     }
 
     if( hole) {
         motors( hole=hole);        
         driver_loc( hole=hole);
         lcd_loc( hole=hole);
+        controller_loc( hole=hole);
    
     }
     
@@ -37,6 +46,7 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         motors( equip=equip);
         driver_loc( equip=equip);
         lcd_loc( equip=equip);
+        controller_loc( equip=equip);
     }
     
 }
@@ -54,4 +64,4 @@ module caisse(mat = false, hole=false, equip = false) {
     }
 }
 
-caisse(mat=true, equip=false);
+caisse(mat=true, equip=true);
