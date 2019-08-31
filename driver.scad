@@ -4,9 +4,10 @@ use <pont.scad>
 use <ZC-A0591.scad>
 
 module driver_impl( mat = false, hole=false, equip = false) {
-    translate([-4, 23, 21])
+    translate([-4, 23, 22])
     rotate([0, 90, 0]) {
 
+        translate([ 0, 2,  0])
         rotate([ 180, 0, 180])    
         ZC_A0591(equip=equip, hole=hole);
 

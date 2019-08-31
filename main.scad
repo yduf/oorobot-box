@@ -90,8 +90,8 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         motors_loc( hole=hole);        
         driver_loc( hole=hole);
         lcd_loc( hole=hole);
-        controller_loc( mat=mat);
-        battery_loc( mat=mat);   
+        controller_loc( hole=hole);
+        battery_loc( hole=hole);   
     }
     
     if( equip) {
