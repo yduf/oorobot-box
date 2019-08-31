@@ -6,11 +6,16 @@ use <driver.scad>
 use <lcd.scad>
 use <controller.scad>
 
-module driver_loc( mat = false, hole=false, equip = false) {
-    translate([ -44, 0, 0])
-    driver( mat=mat, hole=hole, equip=equip);
+
+module motors_loc( mat = false, hole=false, equip = false) {
+    translate([ 0, 0, -10])
+    motors( mat=mat, hole=hole, equip=equip);
 }
 
+module driver_loc( mat = false, hole=false, equip = false) {
+    translate([ -49, 0, -30])
+    driver( mat=mat, hole=hole, equip=equip);
+}
 
 module lcd_loc(
  mat = false, hole=false, equip = false) {
@@ -28,14 +33,14 @@ module controller_loc( mat = false, hole=false, equip = false) {
 module caisse_impl( mat = false, hole=false, equip = false) {
     if( mat) {
         case();
-        motors( mat=mat);
+        motors_loc( mat=mat);
         driver_loc( mat=mat);
         lcd_loc( mat=mat);
         controller_loc( mat=mat);
     }
 
     if( hole) {
-        motors( hole=hole);        
+        motors_loc( hole=hole);        
         driver_loc( hole=hole);
         lcd_loc( hole=hole);
         controller_loc( hole=hole);
@@ -43,7 +48,7 @@ module caisse_impl( mat = false, hole=false, equip = false) {
     }
     
     if( equip) {
-        motors( equip=equip);
+        motors_loc( equip=equip);
         driver_loc( equip=equip);
         lcd_loc( equip=equip);
         controller_loc( equip=equip);
