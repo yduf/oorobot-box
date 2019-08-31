@@ -1,6 +1,8 @@
 include <NopSCADlib/lib.scad>
 
 use <LCD1602A.scad>
+use <lcd.scad>
+
 use <ZC-A0591.scad>
 use <28BYJ.scad>
 use <pont.scad>

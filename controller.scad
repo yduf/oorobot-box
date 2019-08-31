@@ -2,7 +2,7 @@ use <pont.scad>
 include <arduino.scad>
 
 module controller_impl( mat = false, hole=false, equip = false) {
-    translate([ 4, 25, 26.5])
+    translate([ 5, 24, 26.5])
     rotate([0, 90, 0])
     
     if( hole) {
