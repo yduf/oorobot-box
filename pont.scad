@@ -23,5 +23,23 @@ difference()
     roundedRect([45, 23,  10], 17, true);
     }
 }
+
+module T2() {
+difference() 
+    {
+  union(){
+    translate([0, 0, 20])
+    cube([4, 96, 20], center=true);
+  
+    cube([4, 50, 30], center=true);
+  }
+
+    copy_mirror()
+    color("red")    
+    translate([ 0, -28, -2])
+    rotate([ 0, 90, 0])
+    roundedRect([28, 23,  10], 17, true);
+    }
+}
  
-T();
+T2();

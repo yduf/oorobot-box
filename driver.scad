@@ -4,7 +4,7 @@ use <pont.scad>
 use <ZC-A0591.scad>
 
 module driver_impl( mat = false, hole=false, equip = false) {
-    translate([-4, 23, 22])
+    translate([-4, 23, 24])
     rotate([0, 90, 0]) {
 
         translate([ 0, 2,  0])
@@ -20,9 +20,9 @@ module driver_impl( mat = false, hole=false, equip = false) {
 module driver( mat = false, hole=false, equip = false) {
     
     if( mat) {
-        translate([ 0, 0, 20])
-        resize([ 3, 96, 40])
-        T();
+        translate([ 0, 0, 15])
+        //resize([ 3, 96, 40])
+        T2();
     }
     
     if( hole) {

@@ -40,7 +40,7 @@ module cover_pot( mat = false, hole=false, equip = false) {
   if( mat) {
     translate([ -38, 0, 41])
     rotate([-18, 0, 90])
-    support_LCD( length = 96, width=20);
+    support_LCD( length = 96, width=40);
   }
 }
 
