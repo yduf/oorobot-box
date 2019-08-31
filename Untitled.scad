@@ -96,10 +96,12 @@ difference() {
 
 //cover_hole();
 
-motors();
+//motors();
 //case();
-caisse(); full_equip();
+caisse(); 
+//full_equip();
 
+/*
 translate([ 73, 0, -2])
 rotate([75, 0, 90])
 support_LCD( length = 96, width=50);
@@ -118,3 +120,4 @@ translate([ -24, 0, -27])
 rotate([0, 0, 90])
 roundedRect([battery_w, battery_l, battery_h], 3);
 
+*/

@@ -1,0 +1,9 @@
+- preciser la hauteur des moteurs
+
+- faire les troue pour l'arduino
+
+- prendre en compte la batterie
+
+
+- finir le capot
+
