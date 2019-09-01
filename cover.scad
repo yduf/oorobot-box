@@ -1,42 +1,53 @@
-use <chassis.scad>
+include <chassis.scad>
+use <main.scad>
 
-module proj_cover() {
-    projection()
-    rotate([-90, 0, 0])
-    case();
+cov_width = 96;
+cov_height = 70;
+cov_length = 150;
+cov_thick  = 3;
+
+module z_box() {
+translate([ 0, 0, 30])
+box();
+}
+
+module cover_impl() {
+    difference() 
+    {
+    color("blue")
+    resize([ cov_length + cov_thick, cov_width, cov_height + cov_thick])
+    z_box();
+
+    
+    translate([ 0, 0, -0.1])
+    resize([ cov_length, cov_width + cov_thick, cov_height+0.1])
+    color("cyan") z_box();
+    
+    }
 }
 
 module cover() {
-    //color("lightBlue")
-    translate([0, 96/2])
-    rotate([90, 0, 0])
-    
     difference() 
     {
-    linear_extrude( 96 ) 
-    { 
-        //difference() 
-        {
-            offset(r = 3)
-            //projection()
-            //linear_extrude( height=96,  scale=1.05 )  
-            //translate([0, 2])
-            proj_cover();
+    translate([ 0, 0, -30])
+    cover_impl();
 
-
-            color("red")
-            proj_cover();
-       } 
-    }
-    
-    
-    color("red")
-    translate([0, -3.1, 96/2])
-    rotate([-90, 0, 0])
-    case();
-    
+    caisse(hole=true);
     }
 }
 
+module cover_wo_keyb() {
+    intersection() 
+    {
+        cover();
+        
+        color("red")
+        translate([ -9, 0, 0])
+        cube([ length, width + 10, height + 20], center=true);
+    }
+}
 
-cover();
+rotate([ 90, 0, 0])
+cover_wo_keyb();
+
+//translate([ 0, 0, -3]) caisse(equip=true,mat=true);

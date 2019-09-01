@@ -22,12 +22,23 @@ module arrondis() {
 }
 }
 
+
+module box() {
+    intersection() 
+    {
+        //chassis();
+        translate([-length/2, -width/2, -30])
+        cube([ length, width, height], center=false);
+
+        arrondis();
+    }
+}
+
 // chassis
 module chassis() {
 difference()
 {
-    translate([-length/2, -width/2, -30])
-    cube([ length, width, height], center=false);
+    box();
 
     color("cyan")
     translate([0, 0, 4.5*thick])
@@ -42,11 +53,7 @@ difference()
 
 
 module case() {
-    intersection() 
-    {
-        chassis();
-        arrondis();
-    }
+    chassis();
 }
 
-case();
+// box();

@@ -1,2 +1,11 @@
-- finir le capot
+modele
+- ajuster la position des vis des drivers
 
+- ajuster la position des vis du LCD
+
+- les passe cables ne sont pas assez solide
+    - un peut trop pres des moteurs
+
+- faire des trous dans le capo pour simplifier l'accrochage
+
+- poste d'accrochage a l'avant

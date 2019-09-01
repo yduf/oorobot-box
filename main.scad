@@ -115,6 +115,10 @@ module caisse(mat = false, hole=false, equip = false) {
     if(equip) {
         caisse_impl(equip=equip);
     }
+    
+    if(hole) {
+        caisse_impl(hole=true);
+    }
 }
 
 caisse(mat=true, equip=false);
