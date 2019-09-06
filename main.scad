@@ -143,4 +143,4 @@ module caisse(mat = false, hole=false, equip = false) {
     }
 }
 
-caisse(mat=true, equip=true);
+caisse(mat=true, equip=false);
