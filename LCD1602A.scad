@@ -1,5 +1,6 @@
 include <NopSCADlib/lib.scad>
 use <roundbox.scad>
+use <M3.scad>
 
 // screw
 module LCD1602A( hole = false, model = true ) {
@@ -10,11 +11,11 @@ type = LCD1602A;
         color("cyan") {
         translate([ 0, 0, -1.5*h])        
         pcb_screw_positions(LCD1602APCB)
-        cylinder(r1=1.5, r2=1.5, h, center=false);
+        M3_hole(depth=h);
     
         //      display_aperture( type, 2, false);
         translate([ 0, 0, -4])        
-        roundedRect([73, 30, 30], 3);
+        roundedRect([73, 28, 30], 3);
     }
 }
     if( model) {

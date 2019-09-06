@@ -1,5 +1,5 @@
 include <NopSCADlib/lib.scad>
-
+use <M3.scad>
 
 module 28BYJ_model()
     layout([for(g = geared_steppers) geared_stepper_screw_positions(g)], 5)
@@ -26,13 +26,8 @@ module 28BYJ_hole() {
       }
         
       // screw
-      color("cyan") {
-      translate([0, 17.5, 0])
-      cylinder(r1=1.5, r2=1.5, h, center=false);
-      
-      translate([0, -17.5, 0])
-      cylinder(r1=1.5, r2=1.5, h, center=false);
-      }
+      M3_hole([0, 17.5, 0], h);
+      M3_hole([0, -17.5, 0], h);
   }
 }
 
@@ -58,4 +53,4 @@ module 28BYJ_stepper(support = false, hole=false, motor=true) {
     }
 }
 
-28BYJ_stepper( support=false, hole=false);
+28BYJ_stepper( support=true, hole=true);

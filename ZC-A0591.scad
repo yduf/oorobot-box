@@ -1,7 +1,13 @@
 include <NopSCADlib/lib.scad>
+use <M3.scad>
+
+// ecartement 27.2mm/32
+//  32 - 2x2.25 => 27.5mm
+// 30.5mm/35
+//  35 - 2x3.25 => 29.5mm
 
 ZC_A0591 = ["ZC_A0591", "ZC_A05912", 35, 32, 1.6, 0,    2.5,   0, "green", false, 
-    [[2.25, 3.25], [-2.25, 3.25], [2.25, -3.25], [-2.25, -3.25]],   // hole position relative to border
+    [[3.25, 2.25], [-3.25, 2.25], [3.25, -2.25], [-3.25, -2.25]],   // hole position relative to border
     // BOM
     [
     [ 8, 20, 90, "2p54header", 4, 1],
@@ -12,7 +18,7 @@ ZC_A0591 = ["ZC_A0591", "ZC_A05912", 35, 32, 1.6, 0,    2.5,   0, "green", false
 
 
 module ZC_A0591(equip=true,hole=false) {
-    h = 10;
+    h = 7;
     type = ZC_A0591;
     top_screw = pcb_holes( type)[0];
     
@@ -21,7 +27,7 @@ module ZC_A0591(equip=true,hole=false) {
         color("cyan") {
         translate([ 0, 0, -h])        
             pcb_screw_positions(type)
-            cylinder(r1=1.5, r2=1.5, h, center=false);
+            M3_hole(depth=h);
         }
     }
     
@@ -35,5 +41,5 @@ module ZC_A0591(equip=true,hole=false) {
     }
 }
 
-ZC_A0591();
+ZC_A0591( hole=true);
 

@@ -18,6 +18,7 @@
  */
 
 // Throughout this entire model, (0,0) is the top left mounting hole (nearest  the USB port)
+use <M3.scad>
 
 // thickness of the PCB
 board_height = 1.8;
@@ -192,17 +193,11 @@ module MountingHoles()
 {
 	translate([0, 0, -10])
 	{
-		ArduinoHole(25);
-		translate([-1.0929112, -48.4026972, 0]) ArduinoHole(25);
-		translate([51, -15.25, 0]) ArduinoHole(25);
-		translate([51, -43.25, 0]) ArduinoHole(25);
+		M3_hole(depth=25);
+		M3_hole([-1.0929112, -48.4026972, 0],depth=25);
+		M3_hole([51, -15.25, 0],depth=25);
+		M3_hole([51, -43.25, 0],depth=25);
 	}
-}
-
-module ArduinoHole(length)
-{
-	color([0.7, 0.7, 0.7])
-	cylinder(r=1.5, h=length, $fn=25);
 }
 
 //Arduino( solid_holes=1, combined_headers=0, extend_ports=1);

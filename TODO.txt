@@ -1,14 +1,5 @@
 modele
-- ajuster la position des vis des drivers
-
 - ajuster la position des vis du LCD
-
-- les passe cables ne sont pas assez solide
-    - un peut trop pres des moteurs
-
-- faire des trous dans le capo pour simplifier l'accrochage
-
-- poste d'accrochage a l'avant
 
 - faire un casier a batterie pour rendre l'accès au fil impossible
     - laisseune place sous le fond 
@@ -19,8 +10,6 @@ modele
 Impression
 - regler le pb des fils
 - reduire la densité des supports pour le couvercle
-
-- on peut garder la taille des roues si les billes sont bonnes
 
 Programme
 - desactiver le crayon sur le clavier

@@ -1,5 +1,7 @@
 include <NopSCADlib/lib.scad>
 use <LCD1602A.scad>
+use <M3.scad>
+
 
 module support_LCD( length, width) {
     translate([0,0, -9]) 
@@ -41,6 +43,10 @@ module lcd( mat = false, hole=false, equip = false) {
     
     if( hole) {
         LCD1602A(hole=hole, model=false);
+
+        v=18;
+        M3_hole([ -43, v, 10], depth=50, invert=true);
+        M3_hole([  43, v, 10], depth=50, invert=true);        
     }
     
     if( equip) {
@@ -54,6 +60,6 @@ lcd(mat=true);
 lcd(hole=true);
 }
 
-lcd(equip=true);
+lcd(equip=true,hole=true);
 
 

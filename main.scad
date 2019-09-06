@@ -6,6 +6,10 @@ use <driver.scad>
 use <lcd.scad>
 use <controller.scad>
 use <battery.scad>
+use <roundbox.scad>
+use <M3.scad>
+use <bille.scad>
+
 
 
 module motors_loc( mat = false, hole=false, equip = false) {
@@ -36,12 +40,27 @@ module battery_loc( mat = false, hole=false, equip = false) {
     battery( mat=mat, hole=hole, equip=equip);
 }
 
+module bille_loc( mat = false, hole=false, equip = false) {
+    translate([ -49, 0, -30])
+    rotate([ 180, 0, 0])
+    bille( mat=mat, hole=hole, equip=equip);
+}
+
 module cover_pot( mat = false, hole=false, equip = false) {
+
+translate([ -38, 0, 41])
+rotate([-18, 0, 90])
+{
   if( mat) {
-    translate([ -38, 0, 41])
-    rotate([-18, 0, 90])
     support_LCD( length = 96, width=40);
   }
+  
+  if( hole) {
+      v=15;
+      M3_hole([ -41, v, 0], depth=30, invert=true);
+      M3_hole([  41, v, 0], depth=30, invert=true);
+  }
+ } 
 }
 
 module pass_cable( mat = false, hole=false, equip = false) {
@@ -49,18 +68,16 @@ module pass_cable( mat = false, hole=false, equip = false) {
     h = 25;
   if( mat) {
     translate([ -40, 0, -30])
-    color("orange") {   
-        translate([ 0, 40, 0])
-        cylinder(r=r, h=h, center=false);
+    color("green") {   
+        
+        translate([ 7, 40, 0])
+        roundedRect([20, 0, h], r);
 
-        translate([ 20, 40, 0])
-        cylinder(r=r, h=h, center=false);
+        translate([ 7, -40, 0])
+        roundedRect([20, 0, h], r);
 
-        translate([ -1, -40, 0])
-        cylinder(r=r, h=h, center=false);
-
-        translate([ 20, -40, 0])
-        cylinder(r=r, h=h, center=false);
+        translate([ 30, 0, 0])
+        roundedRect([0, 40, 60], r);
     }
   }
 }
@@ -75,23 +92,27 @@ module keyboard( mat = false, hole=false, equip = false) {
 
 module caisse_impl( mat = false, hole=false, equip = false) {
     if( mat) {
-        case();
+        case(mat=mat);
         motors_loc( mat=mat);
         driver_loc( mat=mat);
         lcd_loc( mat=mat);
         controller_loc( mat=mat);
         battery_loc( mat=mat);
         cover_pot( mat=mat);
-        pass_cable( mat=mat);
+        //pass_cable( mat=mat);
         keyboard( mat=mat);
+        bille_loc( mat=mat);
     }
 
     if( hole) {
+        case(hole=hole);
         motors_loc( hole=hole);        
         driver_loc( hole=hole);
         lcd_loc( hole=hole);
         controller_loc( hole=hole);
-        battery_loc( hole=hole);   
+        battery_loc( hole=hole);  
+        cover_pot( hole=hole);
+        bille_loc( hole=hole);
     }
     
     if( equip) {
@@ -99,7 +120,8 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         driver_loc( equip=equip);
         lcd_loc( equip=equip);
         controller_loc( equip=equip);
-        battery_loc( equip=equip);
+        //battery_loc( equip=equip);
+        bille_loc( equip=equip);
     }
     
 }
@@ -121,4 +143,4 @@ module caisse(mat = false, hole=false, equip = false) {
     }
 }
 
-caisse(mat=true, equip=false);
+caisse(mat=true, equip=true);
