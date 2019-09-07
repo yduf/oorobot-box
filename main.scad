@@ -142,5 +142,3 @@ module caisse(mat = false, hole=false, equip = false) {
         caisse_impl(hole=true);
     }
 }
-
-caisse(mat=true, equip=false);

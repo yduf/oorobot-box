@@ -1,14 +1,10 @@
 modele
-- ajuster la position des vis du LCD
+- driver screw => still incorrect
 
-- faire un casier a batterie pour rendre l'accès au fil impossible
-    - laisseune place sous le fond 
-    - prevoi les calles dans le modele
 
 - faire un support pour clavier 4x4 qui ne laisse passer que 3x4
 
 Impression
-- regler le pb des fils
 - reduire la densité des supports pour le couvercle
 
 Programme

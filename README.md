@@ -8,6 +8,7 @@
 ## STL Files
 - [main](main_new_bot.stl)
 - [cover without keyboard](cover_wo_key.stl)
+- [wheel](wheel.stl) - same as original
 
 ## Thingiverse (TBD)
 
