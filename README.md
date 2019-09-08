@@ -1,5 +1,7 @@
 # Openscad model for OOrobot case and cover
 
+![exploded](https://user-images.githubusercontent.com/13983772/64489172-13a04d00-d250-11e9-91b2-e8ed7259de5c.png)
+
 ## Requirement
 
 - openscad library [NopSCADlib](https://github.com/nophead/NopSCADlib/blob/master/readme.md)
@@ -24,5 +26,4 @@
 
 ## Thingiverse (TBD)
 
-## Exploded model (TBD)
 
