@@ -24,6 +24,6 @@
     - infill: 20%
     - layer: 0.28
 
-## Thingiverse (TBD)
-
+## Thingiverse 
+- [thing](https://www.thingiverse.com/thing:3849585)
 
