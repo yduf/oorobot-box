@@ -1,6 +1,6 @@
 // render cover
 include <chassis.scad>
-use <main.scad>
+include <main.scad>
 
 cov_width = 96;
 cov_height = 70;
