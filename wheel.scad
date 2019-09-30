@@ -12,7 +12,7 @@ module moyeu(h=7, epsilon=0.1, clean=false) {
       difference() 
       {
         color("red")
-        cylinder(r=6, h=h, center=true, $fn=100);
+        cylinder(r=6, h=h, center=true, $fn=20);
  
         color("blue")
         cylinder(r=2.5+epsilon, h=h+0.2,  center=true, $fn=50);
@@ -41,7 +41,7 @@ module wheel_cut(r=48,h=10) {
       for (i = [0 : abs(90) : 360]) {
         rotate([0, 0, (i + 45)])
           translate([2.2*r/3, 0, 0])
-            cylinder(r=r/8, h=h, center=true, $fn=200);
+            cylinder(r=r/8, h=h, center=true, $fn=50);
       }
 }
 
@@ -63,11 +63,11 @@ module disque( h=2, r=30) {
 
     color("green")
     translate([delta,shift])
-    circle(r=small, $fn = 100);
+    circle(r=small, $fn = 20);
 
     color("green")
     translate([delta,-shift])
-    circle(r=small, $fn = 100);
+    circle(r=small, $fn = 20);
     }
 }
 
