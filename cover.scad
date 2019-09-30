@@ -2,6 +2,8 @@
 include <chassis.scad>
 include <main.scad>
 
+use <renfort.scad>
+
 cov_width = 96;
 cov_height = 70;
 cov_length = 150;
@@ -11,6 +13,7 @@ module z_box() {
 translate([ 0, 0, 30])
 box();
 }
+
 
 module cover_impl() {
     difference() 
@@ -34,7 +37,7 @@ module cover() {
     cover_impl();
 
     caisse(hole=true);
-    }
+    }    
 }
 
 module cover_wo_keyb() {
@@ -43,12 +46,23 @@ module cover_wo_keyb() {
         cover();
         
         color("red")
-        translate([ -9, 0, 0])
-        cube([ length, width + 10, height + 20], center=true);
+        union() {
+            translate([ -15, 0, 0])
+            cube([ length, width + 10, height + 20], center=true);
+            
+            band=22;
+            translate([ 0, (width - band)/2, 0])
+            cube([ length+10, band, height + 20], center=true); 
+        }      
     }
+    
+        
+    translate([ -7, 0, 40])
+    rotate([ 90, 0, 0])
+    renfort(h=80,r=2);
 }
 
-rotate([ 90, 0, 0])
+rotate([ -90, 0, 0])
 cover_wo_keyb();
 
 //translate([ 0, 0, -3]) caisse(equip=true,mat=true);

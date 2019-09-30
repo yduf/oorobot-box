@@ -19,7 +19,7 @@ module arrondis() {
     color("red")
     translate([0, 0, -80])
     rotate([90, 0, 0])
-    cylinder( h = width + 10, r=120, center = true, $fn=100);
+    cylinder( h = width + 10, r=120+3, center = true, $fn=100);
 }
 }
 
@@ -82,4 +82,5 @@ module case( mat=false, hole=false) {
     }
 }
 
+//arrondis();
 //case(mat=true);

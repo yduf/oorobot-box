@@ -4,10 +4,11 @@
 
 ## Requirement
 
-- openscad library [NopSCADlib](https://github.com/nophead/NopSCADlib/blob/master/readme.md)
+- Openscad library [NopSCADlib](https://github.com/nophead/NopSCADlib/blob/master/readme.md)
 - OpenSCAD 2019.05 or later, download it from [here](https://www.openscad.org/downloads.html)
 
 ## STL Files
+
 - [main](main_new_bot.stl)
     - infill: 20%
     - layer: 0.28
@@ -34,11 +35,14 @@
 - 2x [28BYJ-48 + ULN2003 Moteur Pas à Pas avec Platine de Commande](https://www.amazon.fr/gp/product/B07VGV1XFT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) - 2€/pcs 
 - 1x [arduino uno R3](https://www.amazon.fr/AZDelivery-UNO-R3-Arduino-compatible/dp/B074SB6PBW/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=arduino%2Buno&qid=1568450618&s=gateway&sr=8-6&th=1) - 6€
 
-- 1x a keybarod
-- [Câbles Dupont](https://www.amazon.fr/gp/product/B01JD5WCG2/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1
+- 1x keyboard - [clavier 3x4 analogique](https://fr.aliexpress.com/item/32530917534.html)
+- [Câbles Dupont](https://www.amazon.fr/gp/product/B01JD5WCG2/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
 - M3 screw
 
 - a phone charger battery - 7€
 
 ### Optional
 - 1x module bluetooth
+
+### Older version
+- see [mark_1](https://github.com/yduf/oorobot-box/tree/mark_1) branch

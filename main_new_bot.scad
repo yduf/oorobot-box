@@ -1,4 +1,4 @@
-// rend main box
-include <main.scad>
+// render main box
+use <main.scad>
 
 caisse(mat=true);

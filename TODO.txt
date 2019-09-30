@@ -1,9 +1,6 @@
 modele
 - driver screw => still incorrect
 
-
-- faire un support pour clavier 4x4 qui ne laisse passer que 3x4
-
 Impression
 - reduire la densité des supports pour le couvercle
 

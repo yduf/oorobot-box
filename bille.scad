@@ -6,7 +6,7 @@ module bille_screw( pos, mat=false, hole=false) {
     if( mat) {
         translate([0, 0, -6])
         translate(pos)
-        cylinder(r=3, h=6, center=false);
+        cylinder(r1=3, r2=5, h=6, center=false);
     }
 
     if( hole) {

@@ -1,3 +1,5 @@
+use <battery.scad>
+
 include <NopSCADlib/lib.scad>
 
 use <chassis.scad>
@@ -5,15 +7,15 @@ use <motors.scad>
 use <driver.scad>
 use <lcd.scad>
 use <controller.scad>
-use <battery.scad>
 use <roundbox.scad>
 use <M3.scad>
 use <bille.scad>
+use <keyboard.scad>
 
 
 
 module motors_loc( mat = false, hole=false, equip = false) {
-    translate([ 0, 0, -5])
+    translate([ 0, 0, -7])
     motors( mat=mat, hole=hole, equip=equip);
 }
 
@@ -24,7 +26,7 @@ module driver_loc( mat = false, hole=false, equip = false) {
 
 module lcd_loc(
  mat = false, hole=false, equip = false) {
-    translate([42, 0,  34.5])
+    translate([41, 0,  34.5])
     rotate([-18.5, 0, -90])
     lcd( mat=mat, hole=hole, equip=equip);
 }
@@ -35,9 +37,9 @@ module controller_loc( mat = false, hole=false, equip = false) {
     controller( mat=mat, hole=hole, equip=equip);
 }
  
-module battery_loc( mat = false, hole=false, equip = false) {
+module battery_loc( mat=false, hole=false, equip=false) {
     translate([ -29, 0, -27])
-    battery( mat=mat, hole=hole, equip=equip);
+    battery(mat=mat, hole=hole, equip=equip); 
 }
 
 module bille_loc( mat = false, hole=false, equip = false) {
@@ -82,12 +84,11 @@ module pass_cable( mat = false, hole=false, equip = false) {
   }
 }
 
-module keyboard( mat = false, hole=false, equip = false) {
-  if( mat) {
-    translate([ 73, 0, -2])
-    rotate([75, 0, 90])
-    support_LCD( length = 96, width=50);
-  }
+
+module keyboard_loc( mat=false, hole=false, equip = false) {
+    translate([ 73.5, 0, -2])
+    rotate([72, 0, 90])
+    keyboard( mat, hole, equip);
 }
 
 module caisse_impl( mat = false, hole=false, equip = false) {
@@ -100,7 +101,7 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         battery_loc( mat=mat);
         cover_pot( mat=mat);
         //pass_cable( mat=mat);
-        keyboard( mat=mat);
+        keyboard_loc( mat=mat);
         bille_loc( mat=mat);
     }
 
@@ -113,6 +114,7 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         battery_loc( hole=hole);  
         cover_pot( hole=hole);
         bille_loc( hole=hole);
+        keyboard_loc( hole=hole);
     }
     
     if( equip) {
@@ -122,6 +124,7 @@ module caisse_impl( mat = false, hole=false, equip = false) {
         controller_loc( equip=equip);
         //battery_loc( equip=equip);
         bille_loc( equip=equip);
+        keyboard_loc( equip=equip);
     }
     
 }
@@ -142,3 +145,5 @@ module caisse(mat = false, hole=false, equip = false) {
         caisse_impl(hole=true);
     }
 }
+
+// caisse(mat=true);
