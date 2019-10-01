@@ -6,8 +6,18 @@ use <M3.scad>
 // 30.5mm/35
 //  35 - 2x3.25 => 29.5mm
 
-ZC_A0591 = ["ZC_A0591", "ZC_A05912", 35, 32, 1.6, 0,    2.5,   0, "green", false, 
-    [[3.25, 2.25], [-3.25, 2.25], [3.25, -2.25], [-3.25, -2.25]],   // hole position relative to border
+ZC_A0591 = ["ZC_A0591", "ZC_A05912", 
+    35, // length
+    32.10, // width
+    1.6, // thickness
+    0,   // corner radius
+    2.5, // mounting hole diameter
+    0, // pad around hole
+    "green", 
+    false, //! True if the parts should be separate BOM items
+    // allows negative ordinates to represent offsets from the far edge
+    [[3.25, 2.25], [-3.25, 2.25],
+    [3.25, 2.25+ 26.10], [-3.25, 2.25+ 26.10]],   // hole position relative to border
     // BOM
     [
     [ 8, 20, 90, "2p54header", 4, 1],
