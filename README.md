@@ -1,4 +1,4 @@
-# Openscad model for OOrobot case and cover
+# Mark 2: Openscad model for OOrobot case and cover
 
 ![exploded](https://user-images.githubusercontent.com/13983772/64489172-13a04d00-d250-11e9-91b2-e8ed7259de5c.png)
 
@@ -45,4 +45,4 @@
 - 1x module bluetooth
 
 ### Older version
-- see [mark_1](https://github.com/yduf/oorobot-box/tree/mark_1) branch
+- see [Mark_1](https://github.com/yduf/oorobot-box/tree/mark_1) branch
