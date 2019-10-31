@@ -2,7 +2,7 @@ use <roundbox.scad>
 use <M3.scad>
 
 width = 96;
-height = 80;
+height = 80;    // used only for cut
 length = 150;
 thick  = 3;
 

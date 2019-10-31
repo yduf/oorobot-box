@@ -1,6 +1,11 @@
-modele
+modele Mark II
 - driver screw => Test
  => still need 0.5/0.8 between hole
+- arduino hole are misplaced (need shift toward keyboard. why ?)
+- motor could be shifted a bit toward keyboard for better equilibrium
+- cover is a bit short in width (why?)
+- lcd look's a bit low now.
+- need a hole in cover for right keyboard screw
 
 Impression
 - reduire la densité des supports pour le couvercle

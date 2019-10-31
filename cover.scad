@@ -5,7 +5,7 @@ include <main.scad>
 use <renfort.scad>
 
 cov_width = 96;
-cov_height = 70;
+cov_height = 73; //120+3-80+30;        // =73 - need to be adjusted according to chassis
 cov_length = 150;
 cov_thick  = 3;
 
@@ -23,9 +23,10 @@ module cover_impl() {
     z_box();
 
     
+    color("cyan") 
     translate([ 0, 0, -0.1])
     resize([ cov_length, cov_width + cov_thick, cov_height+0.1])
-    color("cyan") z_box();
+    z_box();
     
     }
 }
@@ -57,7 +58,7 @@ module cover_wo_keyb() {
     }
     
         
-    translate([ -7, 0, 40])
+    translate([ -7, 0, cov_height - 30])
     rotate([ 90, 0, 0])
     renfort(h=80,r=2);
 }

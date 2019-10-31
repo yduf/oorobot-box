@@ -2,10 +2,12 @@ use <cover.scad>
 use <wheel.scad>
 
 // Cover
-translate([0, 0, 70])
+align=7;
+
+translate([0, 0, 1])
 cover_wo_keyb();
 
-translate([0, 0, 7])
+//translate([0, 0, align])
 caisse(mat=true, equip=true);
 
 // Wheel
